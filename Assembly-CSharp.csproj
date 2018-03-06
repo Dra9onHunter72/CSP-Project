@@ -53,6 +53,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ExitOnClick.cs" />
+     <Compile Include="Assets\Scripts\Inventory.cs" />
      <Compile Include="Assets\Scripts\MainCharacter.cs" />
      <Compile Include="Assets\Scripts\StartGame.cs" />
  <Reference Include="UnityEngine.Analytics">
