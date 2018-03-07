@@ -5,7 +5,7 @@ public class Inventory : MonoBehaviour
 {
 	public Image[] itemImages = new Image[numItemSlots];
 	public Item[] items = new Item[numItemSlots];
-	public const int numItemSlots = 4;
+	public const int numItemSlots = 6;
 	public void AddItem(ContextMenuItemAttribute itemToAdd)
 	{
 		for (int i = 0; i < items.Length; i++) 

@@ -34,11 +34,10 @@ public class InventoryEditor : Editor
 		showItemSlots [index] = EditorGUILayout.Foldout (showItemSlots [index], "Item slot " + index);
 		if (showItemSlots [index]) 
 		{
-			EditorGUILayout.PropertyField (itemImageProperty.GetArrayElementAtIndex (index));
+			EditorGUILayout.PropertyField (itemImagesProperty.GetArrayElementAtIndex (index));
 			EditorGUILayout.PropertyField (itemsProperty.GetArrayElementAtIndex (index));
 		}
 		EditorGUI.indentLevel--;
 		EditorGUILayout.EndVertical ();
 	}
-
 }
