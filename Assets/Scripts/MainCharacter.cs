@@ -24,7 +24,7 @@ public class MainCharacter : MonoBehaviour
 		float v = Input.GetAxisRaw ("Vertical");
 
 		Move (h, v);
-		Turning ();
+//		Turning ();
 	}
 
 	void Move (float h, float v)
@@ -36,7 +36,7 @@ public class MainCharacter : MonoBehaviour
 		playerRigidbody.MovePosition (transform.position + movement);
 	}
 
-	void Turning ()
+/*	void Turning ()
 	{
 		Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
 
@@ -52,5 +52,5 @@ public class MainCharacter : MonoBehaviour
 
 			playerRigidbody.MoveRotation (newRotation);
 		}
-	}
+	}*/
 }
