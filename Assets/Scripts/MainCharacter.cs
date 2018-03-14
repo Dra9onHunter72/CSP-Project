@@ -4,53 +4,15 @@ using UnityEngine;
 
 public class MainCharacter : MonoBehaviour 
 {
-	public float speed = 6f;
+	public float movementSpeed = 10;
+	public float turningSpeed = 60;
 
-	Vector3 movement;
-	Rigidbody playerRigidbody;
-	int floorMask;
-	float camRayLength = 100f;
-
-	void Awake ()
+	void Update ()
 	{
-		floorMask = LayerMask.GetMask ("Ground");
+		float horizontal = Input.GetAxis ("Horizontal") * turningSpeed * Time.deltaTime;
+		transform.Rotate (0, horizontal, 0);
 
-		playerRigidbody = GetComponent <Rigidbody> ();
+		float vertical = Input.GetAxis ("Vertical") * movementSpeed * Time.deltaTime;
+		transform.Translate (0, 0, vertical);
 	}
-
-	void FixedUpdate ()
-	{
-		float h = Input.GetAxisRaw ("Horizontal");
-		float v = Input.GetAxisRaw ("Vertical");
-
-		Move (h, v);
-//		Turning ();
-	}
-
-	void Move (float h, float v)
-	{
-		movement.Set (h, 0f, v);
-
-		movement = movement.normalized * speed * Time.deltaTime;
-
-		playerRigidbody.MovePosition (transform.position + movement);
-	}
-
-/*	void Turning ()
-	{
-		Ray camRay = Camera.main.ScreenPointToRay (Input.mousePosition);
-
-		RaycastHit floorHit;
-
-		if (Physics.Raycast (camRay, out floorHit, camRayLength, floorMask)) 
-		{
-			Vector3 playerToMouse = floorHit.point - transform.position;
-
-			playerToMouse.y = 0f;
-
-			Quaternion newRotation = Quaternion.LookRotation (playerToMouse);
-
-			playerRigidbody.MoveRotation (newRotation);
-		}
-	}*/
 }

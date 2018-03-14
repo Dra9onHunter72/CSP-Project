@@ -4,19 +4,24 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour 
 {
-	public GameObject MainCharacter;
-	private Vector3 offset;
-	void Start ()
+	public GameObject target;
+	public float rotateSpeed = 5;
+	Vector3 offset;
+
+	void Start()
 	{
-		offset == transform.position - MainCharacter.transform.position;
+		offset = target.transform.position - transform.position;
 	}
 
-	void LateUpdate ()
+	void LateUpdate()
 	{
-		transform.position - MainCharacter.transform.position + offset;
+		float horizontal = Input.GetAxis ("Mouse X") * rotateSpeed;
+		target.transform.Rotate (0, horizontal, 0);
+
+		float desirableAngle = target.transform.eulerAngles.y;
+		Quaternion rotation = Quaternion.Euler (0, desirableAngle, 0);
+		transform.position = target.transform.position - (rotation * offset);
+
+		transform.LookAt(target.transform);
 	}
-
-
-
-
 }
