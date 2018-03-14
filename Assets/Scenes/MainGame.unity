@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 317832797}
   - component: {fileID: 317832796}
   - component: {fileID: 317832801}
-  - component: {fileID: 317832802}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -224,7 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5494a704ad5ab4076b493d877055e695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  movementSpeed: 10
+  turningSpeed: 10
 --- !u!23 &317832797
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -304,17 +304,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &317832802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 317832795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d700c5f02038c447abde2403e1df0d36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1510348605
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,3 +566,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d700c5f02038c447abde2403e1df0d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 317832795}
+  rotateSpeed: 5
