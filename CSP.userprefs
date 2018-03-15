@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Camera.cs">
     <Files>
-      <File FileName="Assets/Scripts/Camera.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/MainCharacter.cs" Line="27" Column="3" />
+      <File FileName="Assets/Scripts/Camera.cs" Line="25" Column="37" />
+      <File FileName="Assets/Scripts/MainCharacter.cs" Line="8" Column="31" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
