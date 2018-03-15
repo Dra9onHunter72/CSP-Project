@@ -225,6 +225,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 10
   turningSpeed: 10
+  jumpHeight: 8
+  rb: {fileID: 317832801}
 --- !u!23 &317832797
 MeshRenderer:
   m_ObjectHideFlags: 0
