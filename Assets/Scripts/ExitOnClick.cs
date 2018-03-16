@@ -10,7 +10,7 @@ public class ExitOnClick : MonoBehaviour
 		UnityEditor.EditorApplication.isPlaying = false;
 
 		#else
-		Application.Exit();
+		Application.Quit();
 
 		#endif
 	}

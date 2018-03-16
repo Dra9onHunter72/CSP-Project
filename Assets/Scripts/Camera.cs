@@ -18,6 +18,9 @@ public class Camera : MonoBehaviour
 		float horizontal = Input.GetAxis ("Mouse X") * rotateSpeed;
 		target.transform.Rotate (0, horizontal, 0);
 
+		//float vertical = Input.GetAxis ("Mouse Y") * rotateSpeed;
+		//target.transform.Rotate (vertical, 0, 0);
+
 		float desirableAngle = target.transform.eulerAngles.y;
 		Quaternion rotation = Quaternion.Euler (0, desirableAngle, 0);
 		transform.position = target.transform.position - (rotation * offset);
