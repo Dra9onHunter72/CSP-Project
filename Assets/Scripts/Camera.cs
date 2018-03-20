@@ -5,7 +5,10 @@ using UnityEngine;
 public class Camera : MonoBehaviour 
 {
 	public GameObject target;
-	public float rotateSpeed = 5;
+	public float rotateSideWays = 0;
+	public float rotateUpAndDown = 0;
+	public float minAngle = 0;
+	public float maxAngle = 0;
 	Vector3 offset;
 
 	void Start()
@@ -15,8 +18,10 @@ public class Camera : MonoBehaviour
 
 	void LateUpdate()
 	{
-		float horizontal = Input.GetAxis ("Mouse X") * rotateSpeed;
-		float vertical = Input.GetAxis ("Mouse Y") * rotateSpeed;
+		float horizontal = Input.GetAxis ("Mouse X") * rotateSideWays;
+		float vertical = Input.GetAxis ("Mouse Y") * rotateUpAndDown * Time.deltaTime;
+		vertical = Mathf.Clamp (vertical, minAngle, maxAngle);
+		transform.eulerAngles = new Vector3 (vertical, 0, 0);
 		target.transform.Rotate (vertical, horizontal, 0);
 
 		float desirableAngleH = target.transform.eulerAngles.y;
@@ -25,5 +30,7 @@ public class Camera : MonoBehaviour
 		transform.position = target.transform.position - (rotation * offset);
 
 		transform.LookAt(target.transform);
+
+
 	}
 }
